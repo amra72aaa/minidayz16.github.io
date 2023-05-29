@@ -130,6 +130,37 @@
 			{
 				OnRegisterSWError(e);
 			}
+			
+			console.log('尝试解锁')
+			var c = indexedDB.open('localforage')
+			c.onsuccess = function(e) {
+			     var db = e.target.result
+			    console.log('解锁准备就绪', db)
+			    var t = db.transaction(['keyvaluepairs'], 'readwrite')
+			    var oS = t.objectStore('keyvaluepairs')
+				//解锁角色
+			    var uRQ = oS.put('17', 'Characters_unlocks')
+			    uRQ.onsuccess = function(e) {
+			        console.log('解锁开始')
+			    }
+				for (var i = 4; i < 21; i++) {
+					var fRQ = oS.put(1, 'char_' + i)
+					fRQ.onsuccess = function(e) {
+					    console.log('解锁成功char_' + i)
+					}
+				}
+	
+			    //解锁武器和物品
+				var arr = ['aug_unlock', 'deagle_unlock', 'katana_unlock', 'laser_unlock', 'mac10_unlock', 'plast_unlock', 'saiga12_unlock', 'smoke_unlock',
+				'sv98_unlock', 'vss_unlock', 'xxx_unlock', 'lighter_unlock']
+				for (var i = 0; i < arr.length; i++) {
+					var fRQ = oS.put(1, arr[i])
+					fRQ.onsuccess = function(e) {
+					    console.log('解锁成功' + arr[i])
+					}
+				}
+			
+			}
 		};
     </script>
 </body> 
