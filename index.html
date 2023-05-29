@@ -131,7 +131,8 @@
 				OnRegisterSWError(e);
 			}
 			
-			console.log('尝试解锁')
+			try {
+				console.log('尝试解锁')
 			var c = indexedDB.open('localforage')
 			c.onsuccess = function(e) {
 			     var db = e.target.result
@@ -160,6 +161,8 @@
 					}
 				}
 			
+			}	
+			} catch(e) {
 			}
 		};
     </script>
