@@ -132,11 +132,10 @@
 			}
 			
 			setTimeout(function() {
-				console.log('尝试打开数据库')
+				console.log('尝试解锁...')
 				var c = indexedDB.open('localforage')
 				c.onsuccess = function(e) {
 				     var db = e.target.result
-				    console.log('数据库打开成功', db)
 				    var t = db.transaction(['keyvaluepairs'], 'readwrite')
 				
 				    var oS = t.objectStore('keyvaluepairs')
