@@ -1,6 +1,4 @@
 # MiniDayZ in your browser !
-## [MiniDayZ Plus Chinese Version]( https://nsacd.github.io/MDZPCV/ )
-## [MiniDayZ Plus English Version]( http://canebeads.com/MDZPlus/Web/index.html )
 
 ## Notes
 * ### Change controls from stick to tap/draw or keyboard(WASD) for PCV
@@ -15,7 +13,4 @@
   * ### End game event added.
   * ### Special thanks to Kev3232 for help with visuals!
 
-## Mods
-  * ### [Reloaded](https://discord.gg/CSktjeQWtC) by Kev3232
-  * ### [Plus](https://canebeads.com/MDZPlus/MDZPlus.html) by Altero
   
